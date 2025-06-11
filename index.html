@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maillots Collection - Boutique Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Maillots</h1>
+                    <span>Collection</span>
+                </div>
+            </div>
+            
+            <nav class="nav" id="navbar">
+                <div class="nav-container">
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="#" class="nav-link active" data-category="tous">
+                            <i class="fas fa-home"></i>
+                            <span>Tous</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-category="football">
+                            <i class="fas fa-futbol"></i>
+                            <span>Football</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-category="basketball">
+                            <i class="fas fa-basketball-ball"></i>
+                            <span>Basketball</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-category="rugby">
+                            <i class="fas fa-football-ball"></i>
+                            <span>Rugby</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-category="tennis">
+                            <i class="fas fa-table-tennis"></i>
+                            <span>Tennis</span>
+                        </a></li>
+                        <li><a href="#contact" class="nav-link contact-nav-link">
+                            <i class="fab fa-snapchat-ghost"></i>
+                            <span>Contact</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle" title="Changer de thème">
+                    <div class="theme-toggle-inner">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" title="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="hero">
+                <h2>Découvrez notre collection exclusive de maillots</h2>
+                <p>Des maillots de qualité premium pour tous les sports</p>
+                <div class="livraison-badge">
+                    <i class="fas fa-truck"></i>
+                    <span>Livraison partout en France 🇫🇷</span>
+                </div>
+            </section>
+
+            <section class="filters">
+                <div class="filter-group">
+                    <label for="sortSelect">Trier par :</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="nom">Nom</option>
+                        <option value="prix-asc">Prix croissant</option>
+                        <option value="prix-desc">Prix décroissant</option>
+                        <option value="popularite">Popularité</option>
+                        <option value="nouveau">Nouveautés</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <input type="text" id="searchInput" placeholder="Rechercher un maillot..." class="search-input">
+                </div>
+            </section>
+
+            <section class="products" id="productsContainer">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Les produits seront chargés dynamiquement -->
+                </div>
+            </section>
+
+            <section class="contact-section" id="contact">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <h2>📱 Contactez-nous</h2>
+                        <p>Commandez vos maillots directement sur Snapchat</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="snapchat-contact">
+                            <div class="snap-icon">
+                                <i class="fab fa-snapchat-ghost"></i>
+                            </div>
+                            <div class="snap-info">
+                                <h3>Snapchat</h3>
+                                <p class="snap-username">@tastonmaillot93</p>
+                                <p class="snap-description">Commandez directement par Snap !</p>
+                            </div>
+                            <a href="https://www.snapchat.com/add/tastonmaillot93" target="_blank" class="snap-button">
+                                <i class="fab fa-snapchat-ghost"></i>
+                                Ajouter sur Snap
+                            </a>
+                        </div>
+                        <div class="livraison-info">
+                            <div class="livraison-item">
+                                <i class="fas fa-shipping-fast"></i>
+                                <span>Livraison rapide partout en France 🇫🇷</span>
+                            </div>
+                            <div class="livraison-item">
+                                <i class="fas fa-box"></i>
+                                <span>Emballage soigné et sécurisé</span>
+                            </div>
+                            <div class="livraison-item">
+                                <i class="fas fa-star"></i>
+                                <span>Service client réactif sur Snap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Maillots Collection</h3>
+                    <p>Vente de maillots premium partout en France 🇫🇷</p>
+                    <div class="footer-contact">
+                        <i class="fab fa-snapchat-ghost"></i>
+                        <span>@tastonmaillot93</span>
+                    </div>
+                </div>
+                <div class="footer-france">
+                    <div class="france-badge">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>Livraison dans toute la France</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maillots Collection. Tous droits réservés. | Livraison partout en France 🇫🇷</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
