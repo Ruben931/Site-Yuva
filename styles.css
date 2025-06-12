@@ -502,23 +502,25 @@ body::before {
 
 /* Menu burger mobile */
 .mobile-menu-toggle {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    z-index: 100;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 0.7rem;
-    width: 48px;
-    height: 48px;
-    display: flex;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    width: 45px;
+    height: 45px;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
 }
 
 [data-theme="dark"] .mobile-menu-toggle {
     background: rgba(26, 26, 46, 0.4);
+    border: 2px solid rgba(45, 55, 72, 0.4);
 }
 
 .mobile-menu-toggle span {
@@ -1570,19 +1572,7 @@ body::before {
     }
 
     .mobile-menu-toggle {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        z-index: 100;
-        background: white;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        padding: 0.7rem;
-        width: 48px;
-        height: 48px;
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
     
     .theme-toggle {
@@ -1627,8 +1617,8 @@ body::before {
 
     .products-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
     
     .product-info {
@@ -1920,8 +1910,8 @@ body::before {
 @media (max-width: 768px) {
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 
   /* Menu responsive : alignement et bug fix */
