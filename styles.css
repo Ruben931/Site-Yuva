@@ -375,7 +375,7 @@
     opacity: 0.3;
   }
   
-  /* JERSEY ELITE - Ultra Premium Styles */
+  /* TASTONMAILLOT - Ultra Premium Styles */
   
   /* Base Reset */
   * {
@@ -775,7 +775,7 @@
     }
   }
   
-  /* JERSEY ELITE™ - Ultra Luxury CSS */
+  /* TASTONMAILLOT™ - Ultra Luxury CSS */
   
   /* CSS Variables */
   :root {
@@ -807,32 +807,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Custom Cursor */
-  .custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--luxury-gold);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: all 0.1s ease;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-  }
   
-  .cursor-follower {
-    width: 40px;
-    height: 40px;
-    background: var(--luxury-gold);
-    opacity: 0.3;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: all 0.3s ease;
-    transform: translate(-50%, -50%);
-  }
   
   /* Loading Screen */
   #loader {

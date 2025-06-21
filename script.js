@@ -1,4 +1,4 @@
-// JERSEY ELITE™ - Exceptional JavaScript Experience
+// TASTONMAILLOT™ - Exceptional JavaScript Experience
 
 // Premium Product Data with Enhanced Details
 const products = [
@@ -189,8 +189,7 @@ const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileNav = document.getElementById('mobileNav');
 const loader = document.getElementById('loader');
 const header = document.getElementById('header');
-const cursor = document.querySelector('.custom-cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
+
 
 // Initialize Premium Experience
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,7 +201,7 @@ async function initializeExceptionalExperience() {
     await showPremiumLoader();
     
     // Initialize all components
-    initializeCustomCursor();
+
     setupEventListeners();
     displayProducts();
     initializeScrollEffects();
@@ -228,32 +227,7 @@ async function showPremiumLoader() {
     });
 }
 
-// Custom Cursor
-function initializeCustomCursor() {
-    if (window.innerWidth > 768) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            cursorFollower.style.left = e.clientX + 'px';
-            cursorFollower.style.top = e.clientY + 'px';
-        });
-        
-        // Add hover effects
-        const hoverElements = document.querySelectorAll('a, button, .product-card');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-    }
-}
+
 
 // Event Listeners
 function setupEventListeners() {
@@ -570,7 +544,7 @@ function quickView(productId) {
                     </div>
                     <p class="text-3xl font-bebas text-luxury-gold mb-6">€${product.price.toFixed(2)}</p>
                     <p class="text-gray-300 mb-8">
-                        Maillot officiel ${product.team} de la collection exclusive JERSEY ELITE™. 
+                        Maillot officiel ${product.team} de la collection exclusive TASTONMAILLOT™. 
                         Qualité premium garantie avec certificat d'authenticité.
                     </p>
                     <button class="cta-primary w-full" onclick="handleOrder('${product.name}'); closeQuickView();">
@@ -789,7 +763,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Premium Console Messages
-console.log('%cJERSEY ELITE™', 'font-size: 60px; font-weight: bold; background: linear-gradient(135deg, #D4AF37, #F7E7CE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
+console.log('%cTASTONMAILLOT™', 'font-size: 60px; font-weight: bold; background: linear-gradient(135deg, #D4AF37, #F7E7CE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
 console.log('%cHaute Couture Sportive', 'font-size: 20px; color: #D4AF37; font-style: italic;');
 console.log('%c🇫🇷 Crafted with passion in France', 'font-size: 16px; color: #999;');
 
@@ -890,7 +864,7 @@ style.textContent = `
     border: none;
     color: var(--luxury-gold);
     font-size: 1.5rem;
-    cursor: pointer;
+    
     transition: transform 0.3s ease;
 }
 
@@ -938,8 +912,7 @@ style.textContent = `
     font-size: 0.75rem;
 }
 
-body.scrolling .custom-cursor {
-    transform: translate(-50%, -50%) scale(0.8);
-}
+
+
 `;
 document.head.appendChild(style); 
