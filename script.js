@@ -1,420 +1,467 @@
-// Données des maillots
-const maillots = [
+// JERSEY ELITE - Ultra Premium JavaScript
+
+// Premium Product Data
+const products = [
+    // Luxury City Teams Collection
     {
         id: 1,
-        nom: "Maillot PSG Domicile 2024",
-        categorie: "football",
-        prix: 89.99,
-        description: "Maillot officiel du Paris Saint-Germain",
-        popularite: 5,
-        nouveau: true,
-        rating: 4.8
+        name: "PSG EDITION EXCLUSIVE",
+        category: "clubs",
+        price: 189.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Paris Saint-Germain",
+        league: "Ligue 1 Uber Eats"
     },
     {
         id: 2,
-        nom: "Maillot Lakers Away",
-        categorie: "basketball",
-        prix: 75.50,
-        description: "Maillot authentique des Los Angeles Lakers",
-        popularite: 4,
-        nouveau: false,
-        rating: 4.6
+        name: "REAL MADRID ROYAL",
+        category: "clubs",
+        price: 195.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Real Madrid CF",
+        league: "LaLiga Santander"
     },
     {
         id: 3,
-        nom: "Maillot All Blacks",
-        categorie: "rugby",
-        prix: 95.00,
-        description: "Maillot légendaire de l'équipe de Nouvelle-Zélande",
-        popularite: 5,
-        nouveau: true,
-        rating: 4.9
+        name: "BARÇA LEGACY",
+        category: "clubs",
+        price: 192.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "FC Barcelona",
+        league: "LaLiga Santander"
     },
     {
         id: 4,
-        nom: "Maillot Real Madrid",
-        categorie: "football",
-        prix: 82.99,
-        description: "Maillot blanc mythique du Real Madrid",
-        popularite: 5,
-        nouveau: false,
-        rating: 4.7
+        name: "CITY CHAMPIONS",
+        category: "clubs",
+        price: 191.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: false,
+        team: "Manchester City",
+        league: "Premier League"
     },
     {
         id: 5,
-        nom: "Maillot Warriors Home",
-        categorie: "basketball",
-        prix: 69.99,
-        description: "Maillot domicile Golden State Warriors",
-        popularite: 4,
-        nouveau: false,
-        rating: 4.5
+        name: "LIVERPOOL HERITAGE",
+        category: "clubs",
+        price: 189.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: false,
+        team: "Liverpool FC",
+        league: "Premier League"
     },
     {
         id: 6,
-        nom: "Maillot France Rugby",
-        categorie: "rugby",
-        prix: 78.00,
-        description: "Maillot bleu de l'équipe de France de rugby",
-        popularite: 4,
-        nouveau: true,
-        rating: 4.4
+        name: "BAYERN ELITE",
+        category: "clubs",
+        price: 194.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "FC Bayern München",
+        league: "Bundesliga"
     },
+    
+    // Luxury National Teams Collection
     {
         id: 7,
-        nom: "Polo Wimbledon",
-        categorie: "tennis",
-        prix: 65.00,
-        description: "Polo officiel du tournoi de Wimbledon",
-        popularite: 3,
-        nouveau: false,
-        rating: 4.2
+        name: "FRANCE TRICOLORE",
+        category: "national",
+        price: 185.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Équipe de France",
+        league: "UEFA Nations"
     },
     {
         id: 8,
-        nom: "Maillot Barcelona",
-        categorie: "football",
-        prix: 85.99,
-        description: "Maillot blaugrana du FC Barcelone",
-        popularite: 5,
-        nouveau: true,
-        rating: 4.8
+        name: "BRASIL SELEÇÃO",
+        category: "national",
+        price: 183.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Brasil",
+        league: "CONMEBOL"
     },
     {
         id: 9,
-        nom: "Maillot Bulls Chicago",
-        categorie: "basketball",
-        prix: 79.99,
-        description: "Maillot rouge iconique des Chicago Bulls",
-        popularite: 5,
-        nouveau: false,
-        rating: 4.9
+        name: "ARGENTINA ALBICELESTE",
+        category: "national",
+        price: 187.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Argentina",
+        league: "CONMEBOL"
     },
     {
         id: 10,
-        nom: "Polo Roland Garros",
-        categorie: "tennis",
-        prix: 55.00,
-        description: "Polo élégant du tournoi Roland Garros",
-        popularite: 3,
-        nouveau: true,
-        rating: 4.1
+        name: "DEUTSCHLAND MANNSCHAFT",
+        category: "national",
+        price: 184.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: false,
+        team: "Deutschland",
+        league: "UEFA Nations"
+    },
+    {
+        id: 11,
+        name: "ESPAÑA ROJA",
+        category: "national",
+        price: 186.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: false,
+        team: "España",
+        league: "UEFA Nations"
+    },
+    {
+        id: 12,
+        name: "PORTUGAL NAVEGADORES",
+        category: "national",
+        price: 188.00,
+        image: "https://images.unsplash.com/photo-1602901248692-3b8dd2d57418?w=600&h=800&fit=crop",
+        isNew: true,
+        team: "Portugal",
+        league: "UEFA Nations"
     }
 ];
 
-// Variables globales
-let maillotsAffiches = [...maillots];
-let categorieActive = 'tous';
-let triActuel = 'nom';
+// State Management
+let currentCategory = 'tous';
+let currentSort = 'nom';
+let searchTerm = '';
 
-// Éléments DOM
-const themeToggle = document.getElementById('themeToggle');
-const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
+// DOM Elements
+const productsGrid = document.getElementById('productsGrid');
 const sortSelect = document.getElementById('sortSelect');
 const searchInput = document.getElementById('searchInput');
-const productsGrid = document.getElementById('productsGrid');
+const navLinks = document.querySelectorAll('.nav-link');
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNav = document.getElementById('mobileNav');
+const loader = document.getElementById('loader');
+const header = document.getElementById('header');
 
-// Initialisation
+// Initialize Premium Experience
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    afficherMaillots();
-    attachEventListeners();
+    initializeLuxuryExperience();
 });
 
-// Gestion du thème
-function initTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
+async function initializeLuxuryExperience() {
+    // Show loader
+    await simulateLoading();
     
-    // Initialiser le tooltip correctement
-    const tooltip = savedTheme === 'dark' ? 'Mode clair' : 'Mode sombre';
-    themeToggle.setAttribute('data-tooltip', tooltip);
-    themeToggle.setAttribute('aria-label', tooltip);
-    
-    updateThemeIcon(savedTheme);
+    // Initialize components
+    setupEventListeners();
+    displayProducts();
+    initializeScrollEffects();
+    initializeAnimations();
 }
 
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    // Ajouter un effet de feedback visuel
-    themeToggle.style.transform = 'scale(0.95)';
-    
-    // Changer le thème avec une légère animation
-    setTimeout(() => {
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-        
-        // Restaurer la taille du bouton
-        themeToggle.style.transform = 'scale(1)';
-        
-        // Ajouter un petit effet de "success"
-        themeToggle.style.boxShadow = newTheme === 'dark' 
-            ? '0 0 20px rgba(240, 147, 251, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3)'
-            : '0 0 20px rgba(102, 126, 234, 0.6), 0 4px 20px rgba(0, 0, 0, 0.1)';
-        
+// Premium Loading Experience
+async function simulateLoading() {
+    return new Promise(resolve => {
         setTimeout(() => {
-            themeToggle.style.boxShadow = '';
-        }, 500);
-        
-    }, 100);
+            loader.classList.add('hide');
+            document.body.style.overflow = 'visible';
+            resolve();
+        }, 2000);
+    });
 }
 
-function updateThemeIcon(theme) {
-    // Le nouveau bouton thème utilise CSS pour l'animation du slider
-    // Pas besoin de modifier les icônes, elles sont fixes et l'animation 
-    // se fait automatiquement via [data-theme="dark"] .theme-toggle-inner::before
-    
-    // Mettre à jour le tooltip
-    const tooltip = theme === 'dark' ? 'Mode clair' : 'Mode sombre';
-    themeToggle.setAttribute('data-tooltip', tooltip);
-    themeToggle.setAttribute('aria-label', tooltip);
-    
-    // Optionnel : ajouter une petite animation au clic
-    const toggleInner = themeToggle.querySelector('.theme-toggle-inner');
-    if (toggleInner) {
-        toggleInner.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            toggleInner.style.transform = 'scale(1)';
-        }, 150);
-    }
-}
-
-// Event listeners
-function attachEventListeners() {
-    themeToggle.addEventListener('click', toggleTheme);
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-    
+// Event Listeners
+function setupEventListeners() {
+    // Navigation
     navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const categorie = e.target.getAttribute('data-category') || 
-                             e.target.closest('.nav-link').getAttribute('data-category');
-            const linkElement = e.target.closest('.nav-link');
-            changerCategorie(categorie, linkElement);
-            
-            // Fermer le menu mobile après sélection
-            if (window.innerWidth <= 768) {
-                closeMobileMenu();
-            }
-        });
+        link.addEventListener('click', handleNavClick);
     });
-    
-    sortSelect.addEventListener('change', (e) => {
-        triActuel = e.target.value;
-        trierMaillots();
+
+    // Mobile navigation
+    document.querySelectorAll('#mobileNav a[data-category]').forEach(link => {
+        link.addEventListener('click', handleNavClick);
     });
-    
-    searchInput.addEventListener('input', (e) => {
-        rechercherMaillots(e.target.value);
+
+    // Sort with animation
+    sortSelect.addEventListener('change', () => {
+        currentSort = sortSelect.value;
+        animateProductChange();
     });
-    
-    // Fermer le menu mobile en cliquant en dehors
+
+    // Search with debounce
+    searchInput.addEventListener('input', debounce((e) => {
+        searchTerm = e.target.value.toLowerCase();
+        animateProductChange();
+    }, 300));
+
+    // Mobile menu
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+    // Close mobile menu on outside click
     document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && 
-            !navbar.contains(e.target) && 
-            !mobileMenuToggle.contains(e.target) &&
-            navbar.classList.contains('active')) {
+        if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
             closeMobileMenu();
         }
     });
+}
+
+// Navigation Handler
+function handleNavClick(e) {
+    e.preventDefault();
     
-    // Gestion du redimensionnement de la fenêtre
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && navbar.classList.contains('active')) {
-            closeMobileMenu();
+    const category = e.target.closest('a').dataset.category;
+    if (!category) return;
+    
+    currentCategory = category;
+    
+    // Update active state with animation
+    document.querySelectorAll('.nav-link, #mobileNav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.category === category) {
+            link.classList.add('active');
         }
     });
     
-    // Gestion du scroll pour la navbar
-    window.addEventListener('scroll', handleScroll);
-
-    // Défilement fluide vers la section contact
-    document.querySelector('.contact-nav-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        const contactSection = document.querySelector('#contact');
-        contactSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
+    closeMobileMenu();
+    animateProductChange();
 }
 
-// Gestion de l'effet scroll sur la navbar
-function handleScroll() {
-    const header = document.querySelector('.header');
-    const scrolled = window.scrollY > 50;
-    
-    if (scrolled) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+// Mobile Menu Functions
+function toggleMobileMenu() {
+    mobileMenuToggle.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : 'visible';
 }
 
-// Gestion des catégories
-function changerCategorie(categorie, element) {
-    // Mettre à jour l'état actif
-    navLinks.forEach(link => link.classList.remove('active'));
-    element.classList.add('active');
-    
-    categorieActive = categorie;
-    filtrerParCategorie();
+function closeMobileMenu() {
+    mobileMenuToggle.classList.remove('active');
+    mobileNav.classList.remove('active');
+    document.body.style.overflow = 'visible';
 }
 
-function filtrerParCategorie() {
-    if (categorieActive === 'tous') {
-        maillotsAffiches = [...maillots];
-    } else {
-        maillotsAffiches = maillots.filter(maillot => maillot.categorie === categorieActive);
-    }
+// Premium Product Display
+function animateProductChange() {
+    productsGrid.style.opacity = '0';
+    productsGrid.style.transform = 'translateY(20px)';
     
-    // Appliquer le tri actuel
-    trierMaillots();
+    setTimeout(() => {
+        displayProducts();
+        productsGrid.style.opacity = '1';
+        productsGrid.style.transform = 'translateY(0)';
+    }, 300);
 }
 
-// Système de tri
-function trierMaillots() {
-    switch (triActuel) {
-        case 'nom':
-            maillotsAffiches.sort((a, b) => a.nom.localeCompare(b.nom));
-            break;
-        case 'prix-asc':
-            maillotsAffiches.sort((a, b) => a.prix - b.prix);
-            break;
-        case 'prix-desc':
-            maillotsAffiches.sort((a, b) => b.prix - a.prix);
-            break;
-        case 'popularite':
-            maillotsAffiches.sort((a, b) => b.popularite - a.popularite);
-            break;
-        case 'nouveau':
-            maillotsAffiches.sort((a, b) => b.nouveau - a.nouveau);
-            break;
-    }
+function displayProducts() {
+    const filtered = filterProducts();
+    const sorted = sortProducts(filtered);
     
-    afficherMaillots();
-}
-
-// Système de recherche
-function rechercherMaillots(terme) {
-    const termeLower = terme.toLowerCase();
-    
-    if (termeLower === '') {
-        filtrerParCategorie();
-        return;
-    }
-    
-    let maillotsFilters = categorieActive === 'tous' ? [...maillots] : 
-        maillots.filter(maillot => maillot.categorie === categorieActive);
-    
-    maillotsAffiches = maillotsFilters.filter(maillot => 
-        maillot.nom.toLowerCase().includes(termeLower) ||
-        maillot.description.toLowerCase().includes(termeLower) ||
-        maillot.categorie.toLowerCase().includes(termeLower)
-    );
-    
-    trierMaillots();
-}
-
-// Affichage des maillots
-function afficherMaillots() {
-    productsGrid.innerHTML = '';
-    
-    if (maillotsAffiches.length === 0) {
+    if (sorted.length === 0) {
         productsGrid.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-muted);">
-                <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                <p>Aucun maillot trouvé pour cette recherche.</p>
+            <div class="col-span-full no-results">
+                <i class="fas fa-search"></i>
+                <h3 class="text-3xl font-bebas tracking-wider mb-2">AUCUN RÉSULTAT</h3>
+                <p>Modifiez vos critères de recherche</p>
             </div>
         `;
         return;
     }
     
-    maillotsAffiches.forEach(maillot => {
-        const card = creerCarteMaillot(maillot);
-        productsGrid.appendChild(card);
+    productsGrid.innerHTML = sorted.map((product, index) => 
+        createLuxuryProductCard(product, index)
+    ).join('');
+    
+    // Animate products on load
+    animateProductsOnLoad();
+}
+
+// Filter Products
+function filterProducts() {
+    let filtered = products;
+    
+    if (currentCategory !== 'tous') {
+        filtered = filtered.filter(p => p.category === currentCategory);
+    }
+    
+    if (searchTerm) {
+        filtered = filtered.filter(p => 
+            p.name.toLowerCase().includes(searchTerm) ||
+            p.team.toLowerCase().includes(searchTerm) ||
+            p.league.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    return filtered;
+}
+
+// Sort Products
+function sortProducts(products) {
+    const sorted = [...products];
+    
+    switch (currentSort) {
+        case 'nom':
+            sorted.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'prix-asc':
+            sorted.sort((a, b) => a.price - b.price);
+            break;
+        case 'prix-desc':
+            sorted.sort((a, b) => b.price - a.price);
+            break;
+        case 'nouveau':
+            sorted.sort((a, b) => b.isNew - a.isNew);
+            break;
+    }
+    
+    return sorted;
+}
+
+// Create Luxury Product Card
+function createLuxuryProductCard(product, index) {
+    const categoryName = product.category === 'clubs' ? 'CLUB EDITION' : 'NATION EDITION';
+    const animationDelay = index * 0.1;
+    
+    return `
+        <div class="product-card gpu-accelerated" style="animation-delay: ${animationDelay}s">
+            ${product.isNew ? '<span class="product-badge">NOUVEAU</span>' : ''}
+            <div class="overflow-hidden">
+                <img src="${product.image}" 
+                     alt="${product.name}" 
+                     class="product-image"
+                     loading="lazy">
+            </div>
+            <div class="product-info">
+                <p class="product-category">${categoryName}</p>
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-team">${product.team}</p>
+                <div class="flex items-center justify-between mt-6">
+                    <span class="product-price">€${product.price.toFixed(2)}</span>
+                    <button class="btn-luxury" onclick="handleOrder('${product.name}')">
+                        COMMANDER
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Animate Products on Load
+function animateProductsOnLoad() {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100);
     });
 }
 
-function creerCarteMaillot(maillot) {
-    const card = document.createElement('div');
-    card.className = 'product-card';
-    card.innerHTML = `
-        <div class="product-image">
-            <i class="fas fa-tshirt"></i>
-        </div>
-        <div class="product-info">
-            <div class="product-category">${capitalizeFirst(maillot.categorie)}</div>
-            <h3 class="product-name">${maillot.nom}</h3>
-            <p class="product-description">${maillot.description}</p>
-            <div class="product-footer">
-                <span class="product-price">${maillot.prix.toFixed(2)} €</span>
-                <div class="product-rating">
-                    ${genererEtoiles(maillot.rating)}
-                    <span style="margin-left: 0.5rem; color: var(--text-muted);">${maillot.rating}</span>
-                </div>
-            </div>
-            ${maillot.nouveau ? '<div class="nouveau-badge">✨ NOUVEAU</div>' : ''}
-        </div>
-    `;
+// Scroll Effects
+function initializeScrollEffects() {
+    let lastScroll = 0;
     
-    // Ajouter la classe pour le badge nouveau
-    if (maillot.nouveau) {
-        card.style.position = 'relative';
-    }
-    
-    return card;
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Header effect
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Parallax effect for hero
+        const hero = document.querySelector('.hero-image');
+        if (hero) {
+            hero.style.transform = `translateY(${currentScroll * 0.5}px)`;
+        }
+        
+        lastScroll = currentScroll;
+    });
 }
 
-function genererEtoiles(rating) {
-    const etoilesCompletes = Math.floor(rating);
-    const etoileDemi = rating % 1 >= 0.5;
-    const etoilesVides = 5 - etoilesCompletes - (etoileDemi ? 1 : 0);
+// Initialize Animations
+function initializeAnimations() {
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
     
-    let html = '';
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-up');
+            }
+        });
+    }, observerOptions);
     
-    // Étoiles complètes
-    for (let i = 0; i < etoilesCompletes; i++) {
-        html += '<i class="fas fa-star"></i>';
-    }
-    
-    // Étoile demi
-    if (etoileDemi) {
-        html += '<i class="fas fa-star-half-alt"></i>';
-    }
-    
-    // Étoiles vides
-    for (let i = 0; i < etoilesVides; i++) {
-        html += '<i class="far fa-star"></i>';
-    }
-    
-    return html;
+    // Observe all animatable elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
 }
 
-function capitalizeFirst(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-// Gestion du menu mobile
-function toggleMobileMenu() {
-    navbar.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
+// Handle Order (Redirect to Snapchat)
+function handleOrder(productName) {
+    const message = `Bonjour, je souhaite commander le maillot ${productName}`;
+    const encodedMessage = encodeURIComponent(message);
     
-    // Empêcher le scroll quand le menu est ouvert
-    if (navbar.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
+    // Animate button click
+    event.target.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        event.target.style.transform = 'scale(1)';
+        // Redirect to contact section
+        document.querySelector('#contact').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }, 200);
 }
 
-function closeMobileMenu() {
-    navbar.classList.remove('active');
-    mobileMenuToggle.classList.remove('active');
-    document.body.style.overflow = '';
-} 
+// Utility: Debounce
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add luxury cursor effect
+document.addEventListener('mousemove', (e) => {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-effect';
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+    document.body.appendChild(cursor);
+    
+    setTimeout(() => {
+        cursor.remove();
+    }, 1000);
+});
+
+// Premium console message
+console.log('%cJERSEY ELITE', 'font-size: 50px; font-weight: bold; color: #D4AF37; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);');
+console.log('%cCollection Premium 2024', 'font-size: 16px; color: #666;');
+console.log('%c🇫🇷 Designed with passion in France', 'font-size: 14px; color: #999;'); 
