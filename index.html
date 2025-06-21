@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JERSEY ELITE - Collection Premium</title>
+    <title>JERSEY ELITE™ | Haute Couture Sportive</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&family=Cormorant+Garamond:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,25 +15,30 @@
                     fontFamily: {
                         'bebas': ['Bebas Neue', 'cursive'],
                         'montserrat': ['Montserrat', 'sans-serif'],
-                        'cormorant': ['Cormorant Garamond', 'serif'],
+                        'playfair': ['Playfair Display', 'serif'],
                     },
                     colors: {
                         'luxury-black': '#000000',
                         'luxury-dark': '#0A0A0A',
                         'luxury-gold': '#D4AF37',
+                        'luxury-champagne': '#F7E7CE',
                         'luxury-white': '#FAFAFA',
-                        'luxury-gray': '#2A2A2A',
+                        'luxury-gray': '#1A1A1A',
                     },
                     animation: {
-                        'fade-up': 'fadeUp 0.8s ease-out',
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'slide-right': 'slideRight 0.8s ease-out',
-                        'zoom': 'zoom 20s ease-in-out infinite',
+                        'fade-up': 'fadeUp 1s ease-out',
+                        'fade-in': 'fadeIn 1.2s ease-out',
+                        'slide-right': 'slideRight 1s ease-out',
+                        'zoom': 'zoom 25s ease-in-out infinite',
                         'shimmer': 'shimmer 3s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+                        'text-reveal': 'textReveal 1.5s ease-out',
+                        'gradient-shift': 'gradientShift 8s ease infinite',
                     },
                     keyframes: {
                         fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
                         },
                         fadeIn: {
@@ -41,17 +46,37 @@
                             '100%': { opacity: '1' }
                         },
                         slideRight: {
-                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
                             '100%': { opacity: '1', transform: 'translateX(0)' }
                         },
                         zoom: {
-                            '0%, 100%': { transform: 'scale(1)' },
-                            '50%': { transform: 'scale(1.1)' }
+                            '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+                            '50%': { transform: 'scale(1.1) rotate(1deg)' }
                         },
                         shimmer: {
                             '0%': { backgroundPosition: '-1000px 0' },
                             '100%': { backgroundPosition: '1000px 0' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        pulseGold: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.8' }
+                        },
+                        textReveal: {
+                            '0%': { clipPath: 'inset(0 100% 0 0)' },
+                            '100%': { clipPath: 'inset(0 0 0 0)' }
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
                         }
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F7E7CE 50%, #D4AF37 100%)',
+                        'dark-gradient': 'linear-gradient(180deg, #000000 0%, #0A0A0A 50%, #1A1A1A 100%)',
                     }
                 }
             }
@@ -61,230 +86,406 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="font-montserrat bg-luxury-black text-luxury-white overflow-x-hidden">
-    <!-- Luxury Loading Screen -->
+    <!-- Cursor Effect -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Ultra Luxury Loading Screen -->
     <div id="loader" class="fixed inset-0 z-[100] bg-luxury-black flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-6xl font-bebas text-luxury-gold mb-4 animate-pulse">JERSEY ELITE</h1>
-            <div class="w-32 h-1 bg-luxury-gold mx-auto animate-pulse"></div>
+        <div class="loader-content">
+            <div class="loader-logo">
+                <h1 class="text-7xl font-bebas text-luxury-gold mb-4 tracking-wider">JERSEY</h1>
+                <h2 class="text-7xl font-bebas text-luxury-white tracking-wider">ELITE™</h2>
+            </div>
+            <div class="loader-progress mt-8">
+                <div class="w-64 h-[2px] bg-luxury-gray overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-luxury-gold to-luxury-champagne animate-shimmer"></div>
+                </div>
+            </div>
+            <p class="text-xs tracking-[0.3em] text-luxury-gold mt-4 opacity-60">CHARGEMENT DE L'EXPÉRIENCE</p>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar fixed top-0 w-full z-[60] bg-luxury-gold text-luxury-black py-2 text-center">
+        <div class="announcement-content flex items-center justify-center space-x-8">
+            <span class="text-xs font-semibold tracking-wider">🎯 LIVRAISON PREMIUM 24H</span>
+            <span class="text-xs font-semibold tracking-wider">✨ COLLECTION EXCLUSIVE 2024</span>
+            <span class="text-xs font-semibold tracking-wider">🏆 AUTHENTICITÉ GARANTIE</span>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 transition-all duration-500" id="header">
-        <div class="absolute inset-0 bg-luxury-black/90 backdrop-blur-lg"></div>
+    <header class="fixed w-full top-8 z-50 transition-all duration-700" id="header">
+        <div class="header-bg absolute inset-0 bg-luxury-black/80 backdrop-blur-xl border-b border-luxury-gold/20"></div>
         <div class="relative">
-            <!-- Top Bar -->
-            <div class="bg-luxury-gold text-luxury-black py-2 text-center text-xs font-medium tracking-wider">
-                <p>LIVRAISON GRATUITE EN FRANCE 🇫🇷 | AUTHENTICITÉ GARANTIE</p>
-            </div>
-            
-            <!-- Main Header -->
             <div class="max-w-7xl mx-auto px-6 lg:px-12">
-                <div class="flex items-center justify-between h-20">
+                <div class="flex items-center justify-between h-24">
                     <!-- Logo -->
-                    <div class="flex items-center">
-                        <h1 class="text-3xl font-bebas tracking-wider text-luxury-gold">JERSEY ELITE</h1>
+                    <div class="logo-container">
+                        <a href="#" class="flex flex-col">
+                            <span class="text-3xl font-bebas tracking-wider text-luxury-gold leading-none">JERSEY</span>
+                            <span class="text-3xl font-bebas tracking-wider text-luxury-white leading-none">ELITE™</span>
+                        </a>
+                        <div class="w-16 h-[1px] bg-luxury-gold mt-2"></div>
                     </div>
                     
                     <!-- Navigation -->
-                    <nav class="hidden lg:flex items-center space-x-10">
-                        <a href="#" class="nav-link text-sm font-medium tracking-wider text-luxury-white hover:text-luxury-gold transition-colors duration-300 relative group active" data-category="tous">
-                            COLLECTION
-                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-luxury-gold transform scale-x-100 transition-transform duration-300"></span>
+                    <nav class="hidden lg:flex items-center space-x-12">
+                        <a href="#" class="nav-link group relative" data-category="tous">
+                            <span class="text-sm font-medium tracking-[0.2em] text-luxury-white group-hover:text-luxury-gold transition-all duration-500">COLLECTION</span>
+                            <span class="nav-indicator"></span>
                         </a>
-                        <a href="#" class="nav-link text-sm font-medium tracking-wider text-luxury-white hover:text-luxury-gold transition-colors duration-300 relative group" data-category="clubs">
-                            CLUBS
-                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-luxury-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        <a href="#" class="nav-link group relative" data-category="clubs">
+                            <span class="text-sm font-medium tracking-[0.2em] text-luxury-white group-hover:text-luxury-gold transition-all duration-500">CLUBS</span>
+                            <span class="nav-indicator"></span>
                         </a>
-                        <a href="#" class="nav-link text-sm font-medium tracking-wider text-luxury-white hover:text-luxury-gold transition-colors duration-300 relative group" data-category="national">
-                            NATIONS
-                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-luxury-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        <a href="#" class="nav-link group relative" data-category="national">
+                            <span class="text-sm font-medium tracking-[0.2em] text-luxury-white group-hover:text-luxury-gold transition-all duration-500">NATIONS</span>
+                            <span class="nav-indicator"></span>
+                        </a>
+                        <a href="#exclusive" class="nav-link group relative">
+                            <span class="text-sm font-medium tracking-[0.2em] text-luxury-white group-hover:text-luxury-gold transition-all duration-500">ÉDITIONS LIMITÉES</span>
+                            <span class="nav-indicator"></span>
                         </a>
                     </nav>
                     
                     <!-- Right Section -->
                     <div class="flex items-center space-x-6">
-                        <a href="#contact" class="hidden lg:inline-flex items-center space-x-2 bg-luxury-gold text-luxury-black px-6 py-2.5 text-xs font-bold tracking-wider hover:bg-luxury-white transition-all duration-300">
-                            <i class="fab fa-snapchat-ghost"></i>
-                            <span>CONTACT</span>
+                        <button class="hidden lg:flex items-center space-x-2 text-luxury-white hover:text-luxury-gold transition-all duration-300">
+                            <i class="fas fa-search text-lg"></i>
+                        </button>
+                        
+                        <a href="#contact" class="hidden lg:inline-flex items-center space-x-2 bg-luxury-gold text-luxury-black px-8 py-3 text-xs font-bold tracking-[0.2em] hover:bg-luxury-champagne transition-all duration-500 group">
+                            <span>COMMANDER</span>
+                            <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform duration-300"></i>
                         </a>
                         
                         <!-- Mobile Menu -->
-                        <button class="lg:hidden relative w-8 h-8 flex flex-col justify-center items-center" id="mobileMenuToggle">
-                            <span class="w-6 h-0.5 bg-luxury-gold transition-all duration-300"></span>
-                            <span class="w-6 h-0.5 bg-luxury-gold transition-all duration-300 my-1"></span>
-                            <span class="w-6 h-0.5 bg-luxury-gold transition-all duration-300"></span>
+                        <button class="lg:hidden menu-toggle" id="mobileMenuToggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Mobile Navigation -->
-        <nav class="lg:hidden fixed inset-0 bg-luxury-black transform translate-x-full transition-transform duration-500 z-40" id="mobileNav">
-            <div class="flex flex-col h-full pt-24 px-8">
-                <a href="#" class="py-4 text-2xl font-bebas text-luxury-white hover:text-luxury-gold transition-colors border-b border-luxury-gray" data-category="tous">COLLECTION</a>
-                <a href="#" class="py-4 text-2xl font-bebas text-luxury-white hover:text-luxury-gold transition-colors border-b border-luxury-gray" data-category="clubs">CLUBS</a>
-                <a href="#" class="py-4 text-2xl font-bebas text-luxury-white hover:text-luxury-gold transition-colors border-b border-luxury-gray" data-category="national">NATIONS</a>
-                <a href="#contact" class="py-4 text-2xl font-bebas text-luxury-gold">CONTACT</a>
-            </div>
-        </nav>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav lg:hidden" id="mobileNav">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <h3 class="text-4xl font-bebas text-luxury-gold">MENU</h3>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#" class="mobile-nav-link" data-category="tous">
+                    <span class="text-3xl font-bebas">COLLECTION</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="mobile-nav-link" data-category="clubs">
+                    <span class="text-3xl font-bebas">CLUBS</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#" class="mobile-nav-link" data-category="national">
+                    <span class="text-3xl font-bebas">NATIONS</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <span class="text-3xl font-bebas text-luxury-gold">COMMANDER</span>
+                    <i class="fas fa-arrow-right text-luxury-gold"></i>
+                </a>
+            </div>
+            <div class="mobile-nav-footer">
+                <div class="flex items-center justify-center space-x-4">
+                    <i class="fab fa-snapchat-ghost text-2xl text-luxury-gold"></i>
+                    <span class="text-luxury-gold font-medium">@TASTONMAILLOT93</span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center overflow-hidden">
-            <!-- Background Video/Image Effect -->
-            <div class="absolute inset-0">
-                <div class="absolute inset-0 bg-gradient-to-b from-luxury-black via-transparent to-luxury-black z-10"></div>
-                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920" 
-                     alt="Football Jersey" 
-                     class="w-full h-full object-cover animate-zoom">
+        <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden">
+            <!-- Animated Background -->
+            <div class="hero-bg absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-br from-luxury-black via-luxury-dark to-luxury-gray"></div>
+                <div class="absolute inset-0 opacity-30">
+                    <div class="h-full w-full bg-[url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920')] bg-cover bg-center animate-zoom"></div>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-luxury-black via-transparent to-luxury-black/50"></div>
+            </div>
+            
+            <!-- Floating Elements -->
+            <div class="floating-elements absolute inset-0 overflow-hidden">
+                <div class="floating-element floating-element-1"></div>
+                <div class="floating-element floating-element-2"></div>
+                <div class="floating-element floating-element-3"></div>
             </div>
             
             <!-- Hero Content -->
-            <div class="relative z-20 text-center px-6 max-w-5xl mx-auto">
-                <p class="text-luxury-gold text-sm font-medium tracking-[0.3em] mb-4 animate-fade-up">COLLECTION EXCLUSIVE 2024</p>
-                <h1 class="text-7xl md:text-9xl font-bebas text-luxury-white mb-6 leading-none animate-fade-up animation-delay-200">
-                    MAILLOTS<br>
-                    <span class="text-stroke">PREMIUM</span>
+            <div class="hero-content relative z-20 text-center px-6 max-w-6xl mx-auto">
+                <div class="hero-badge inline-flex items-center space-x-2 bg-luxury-gold/10 border border-luxury-gold/30 px-6 py-2 rounded-full mb-8">
+                    <span class="w-2 h-2 bg-luxury-gold rounded-full animate-pulse"></span>
+                    <span class="text-xs font-medium tracking-[0.3em] text-luxury-gold">NOUVELLE COLLECTION</span>
+                </div>
+                
+                <h1 class="hero-title text-6xl md:text-8xl lg:text-9xl font-bebas mb-6">
+                    <span class="block text-luxury-white animate-text-reveal">MAILLOTS</span>
+                    <span class="block text-transparent bg-clip-text bg-gold-gradient animate-text-reveal animation-delay-200">HAUTE COUTURE</span>
                 </h1>
-                <p class="text-xl font-light text-gray-300 mb-10 max-w-2xl mx-auto animate-fade-up animation-delay-400">
-                    Découvrez notre sélection exclusive de maillots authentiques des plus grands clubs et nations
+                
+                <p class="hero-subtitle text-lg md:text-xl font-light text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-up animation-delay-400">
+                    Découvrez l'excellence du football à travers notre collection exclusive de maillots premium. 
+                    Chaque pièce est une œuvre d'art sportive.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up animation-delay-600">
-                    <a href="#products" class="group relative overflow-hidden bg-luxury-gold text-luxury-black px-10 py-4 font-bold tracking-wider transition-all duration-300 hover:text-luxury-gold">
-                        <span class="relative z-10">DÉCOUVRIR LA COLLECTION</span>
-                        <div class="absolute inset-0 bg-luxury-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                
+                <div class="hero-cta flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-up animation-delay-600">
+                    <a href="#products" class="cta-primary group">
+                        <span class="relative z-10">EXPLORER LA COLLECTION</span>
+                        <div class="cta-bg"></div>
                     </a>
-                    <a href="#contact" class="border-2 border-luxury-gold text-luxury-gold px-10 py-4 font-bold tracking-wider hover:bg-luxury-gold hover:text-luxury-black transition-all duration-300">
-                        COMMANDER
+                    <a href="#exclusive" class="cta-secondary group">
+                        <span>ÉDITIONS LIMITÉES</span>
+                        <i class="fas fa-gem ml-2 group-hover:rotate-12 transition-transform duration-500"></i>
                     </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="hero-stats grid grid-cols-3 gap-8 mt-20 animate-fade-up animation-delay-800">
+                    <div class="stat-item">
+                        <h3 class="text-4xl font-bebas text-luxury-gold">100%</h3>
+                        <p class="text-xs tracking-wider text-gray-400 mt-1">AUTHENTIQUE</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="text-4xl font-bebas text-luxury-gold">24H</h3>
+                        <p class="text-xs tracking-wider text-gray-400 mt-1">LIVRAISON</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="text-4xl font-bebas text-luxury-gold">5★</h3>
+                        <p class="text-xs tracking-wider text-gray-400 mt-1">SATISFACTION</p>
+                    </div>
                 </div>
             </div>
             
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div class="w-6 h-10 border-2 border-luxury-gold rounded-full flex justify-center">
-                    <div class="w-1 h-3 bg-luxury-gold rounded-full mt-2"></div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <div class="scroll-indicator">
+                    <div class="scroll-wheel"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Bar -->
-        <section class="bg-luxury-dark py-8 border-y border-luxury-gray">
-            <div class="max-w-7xl mx-auto px-6 lg:px-12">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-certificate text-3xl text-luxury-gold mb-3"></i>
-                        <h3 class="font-bold text-sm tracking-wider">AUTHENTICITÉ</h3>
-                        <p class="text-xs text-gray-400 mt-1">100% Originaux</p>
+        <!-- Experience Bar -->
+        <section class="experience-bar relative py-16 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-luxury-black via-luxury-gold/10 to-luxury-black"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="experience-item group">
+                        <div class="experience-icon">
+                            <i class="fas fa-crown text-3xl text-luxury-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-bebas tracking-wider mt-4 group-hover:text-luxury-gold transition-colors duration-300">QUALITÉ PREMIUM</h3>
+                        <p class="text-sm text-gray-400 mt-2">Matériaux haute performance</p>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-truck text-3xl text-luxury-gold mb-3"></i>
-                        <h3 class="font-bold text-sm tracking-wider">LIVRAISON EXPRESS</h3>
-                        <p class="text-xs text-gray-400 mt-1">24-48h en France</p>
+                    <div class="experience-item group">
+                        <div class="experience-icon">
+                            <i class="fas fa-shield-alt text-3xl text-luxury-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-bebas tracking-wider mt-4 group-hover:text-luxury-gold transition-colors duration-300">AUTHENTICITÉ CERTIFIÉE</h3>
+                        <p class="text-sm text-gray-400 mt-2">Produits 100% officiels</p>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-shield-alt text-3xl text-luxury-gold mb-3"></i>
-                        <h3 class="font-bold text-sm tracking-wider">PAIEMENT SÉCURISÉ</h3>
-                        <p class="text-xs text-gray-400 mt-1">Transaction protégée</p>
+                    <div class="experience-item group">
+                        <div class="experience-icon">
+                            <i class="fas fa-rocket text-3xl text-luxury-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-bebas tracking-wider mt-4 group-hover:text-luxury-gold transition-colors duration-300">LIVRAISON EXPRESS</h3>
+                        <p class="text-sm text-gray-400 mt-2">24h partout en France</p>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <i class="fas fa-star text-3xl text-luxury-gold mb-3"></i>
-                        <h3 class="font-bold text-sm tracking-wider">SERVICE PREMIUM</h3>
-                        <p class="text-xs text-gray-400 mt-1">Support 24/7</p>
+                    <div class="experience-item group">
+                        <div class="experience-icon">
+                            <i class="fas fa-concierge-bell text-3xl text-luxury-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-bebas tracking-wider mt-4 group-hover:text-luxury-gold transition-colors duration-300">SERVICE VIP</h3>
+                        <p class="text-sm text-gray-400 mt-2">Assistance personnalisée</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Products Section -->
-        <section id="products" class="py-20 bg-luxury-black">
+        <section id="products" class="products-section py-24 relative">
             <div class="max-w-7xl mx-auto px-6 lg:px-12">
                 <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <p class="text-luxury-gold text-sm font-medium tracking-[0.3em] mb-4">NOTRE COLLECTION</p>
-                    <h2 class="text-5xl md:text-6xl font-bebas text-luxury-white">MAILLOTS EXCLUSIFS</h2>
+                <div class="section-header text-center mb-20">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-[1px] bg-luxury-gold"></div>
+                        <p class="text-luxury-gold text-sm font-medium tracking-[0.3em]">COLLECTION EXCLUSIVE</p>
+                        <div class="w-20 h-[1px] bg-luxury-gold"></div>
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-bebas text-luxury-white mb-4">MAILLOTS D'EXCEPTION</h2>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Chaque maillot raconte une histoire, chaque design capture l'essence du football</p>
                 </div>
                 
                 <!-- Filters -->
-                <div class="flex flex-col lg:flex-row justify-between items-center mb-12 space-y-6 lg:space-y-0">
-                    <div class="flex items-center space-x-6">
-                        <select id="sortSelect" class="bg-transparent border border-luxury-gray text-luxury-white px-6 py-3 text-sm tracking-wider focus:outline-none focus:border-luxury-gold transition-colors">
-                            <option value="nom">TRIER PAR NOM</option>
-                            <option value="prix-asc">PRIX CROISSANT</option>
-                            <option value="prix-desc">PRIX DÉCROISSANT</option>
-                            <option value="nouveau">NOUVEAUTÉS</option>
-                        </select>
-                    </div>
-                    
-                    <div class="relative w-full lg:w-96">
-                        <input type="text" 
-                               id="searchInput" 
-                               placeholder="RECHERCHER UN MAILLOT..." 
-                               class="w-full bg-transparent border border-luxury-gray text-luxury-white pl-12 pr-6 py-3 text-sm tracking-wider placeholder-gray-500 focus:outline-none focus:border-luxury-gold transition-colors">
-                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                <div class="filters-container mb-16">
+                    <div class="flex flex-col lg:flex-row justify-between items-center gap-6">
+                        <div class="filter-tabs flex items-center space-x-2">
+                            <button class="filter-tab active" data-filter="tous">
+                                <span>TOUT VOIR</span>
+                                <span class="filter-count">12</span>
+                            </button>
+                            <button class="filter-tab" data-filter="clubs">
+                                <span>CLUBS</span>
+                                <span class="filter-count">6</span>
+                            </button>
+                            <button class="filter-tab" data-filter="national">
+                                <span>NATIONS</span>
+                                <span class="filter-count">6</span>
+                            </button>
+                            <button class="filter-tab" data-filter="nouveau">
+                                <span>NOUVEAUTÉS</span>
+                                <span class="filter-count">8</span>
+                            </button>
+                        </div>
+                        
+                        <div class="filter-controls flex items-center space-x-4">
+                            <div class="search-box relative">
+                                <input type="text" 
+                                       id="searchInput" 
+                                       placeholder="Rechercher..." 
+                                       class="search-input">
+                                <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                            </div>
+                            
+                            <select id="sortSelect" class="sort-select">
+                                <option value="nom">TRIER PAR NOM</option>
+                                <option value="prix-asc">PRIX ↑</option>
+                                <option value="prix-desc">PRIX ↓</option>
+                                <option value="nouveau">NOUVEAUTÉS</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Products Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productsGrid">
+                <div class="products-grid" id="productsGrid">
                     <!-- Products will be loaded dynamically -->
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-luxury-dark relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute inset-0 bg-gradient-to-r from-luxury-gold via-transparent to-luxury-gold"></div>
+        <!-- Exclusive Section -->
+        <section id="exclusive" class="exclusive-section py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-luxury-gold/10 via-luxury-black to-luxury-gold/5"></div>
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="exclusive-content">
+                        <div class="inline-flex items-center space-x-2 mb-6">
+                            <i class="fas fa-gem text-luxury-gold"></i>
+                            <span class="text-luxury-gold text-sm font-medium tracking-[0.3em]">ÉDITION LIMITÉE</span>
+                        </div>
+                        <h2 class="text-5xl md:text-6xl font-bebas text-luxury-white mb-6">COLLECTION SIGNATURE</h2>
+                        <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                            Découvrez notre gamme exclusive de maillots en édition limitée. 
+                            Chaque pièce est numérotée et accompagnée d'un certificat d'authenticité.
+                        </p>
+                        <ul class="exclusive-features space-y-4 mb-10">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-luxury-gold"></i>
+                                <span>Éditions limitées à 500 exemplaires</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-luxury-gold"></i>
+                                <span>Certificat d'authenticité numéroté</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-luxury-gold"></i>
+                                <span>Packaging premium collector</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-luxury-gold"></i>
+                                <span>Accès prioritaire aux nouvelles sorties</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="cta-primary inline-flex group">
+                            <span class="relative z-10">DÉCOUVRIR LA COLLECTION</span>
+                            <div class="cta-bg"></div>
+                        </a>
+                    </div>
+                    <div class="exclusive-image relative">
+                        <div class="image-wrapper relative overflow-hidden rounded-lg">
+                            <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=800" 
+                                 alt="Edition Limitée" 
+                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-luxury-black/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-luxury-gold text-luxury-black p-6 rounded-full">
+                            <span class="text-2xl font-bebas">LIMITED</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section py-24 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-luxury-black via-luxury-dark to-luxury-black"></div>
+            <div class="contact-pattern absolute inset-0 opacity-5"></div>
             
             <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
-                <div class="text-center mb-16">
-                    <p class="text-luxury-gold text-sm font-medium tracking-[0.3em] mb-4">PASSEZ COMMANDE</p>
-                    <h2 class="text-5xl md:text-6xl font-bebas text-luxury-white mb-6">CONTACT EXCLUSIF</h2>
-                    <p class="text-xl font-light text-gray-300">Service personnalisé via Snapchat</p>
+                <div class="contact-header text-center mb-16">
+                    <div class="inline-flex items-center space-x-4 mb-6">
+                        <div class="w-20 h-[1px] bg-luxury-gold"></div>
+                        <p class="text-luxury-gold text-sm font-medium tracking-[0.3em]">CONTACT VIP</p>
+                        <div class="w-20 h-[1px] bg-luxury-gold"></div>
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-bebas text-luxury-white mb-6">COMMANDEZ MAINTENANT</h2>
+                    <p class="text-xl font-light text-gray-300 max-w-2xl mx-auto">
+                        Service exclusif et personnalisé pour une expérience d'achat unique
+                    </p>
                 </div>
                 
-                <div class="bg-luxury-black border border-luxury-gold p-12 relative">
-                    <div class="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-luxury-gold"></div>
-                    <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-luxury-gold"></div>
-                    <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-luxury-gold"></div>
-                    <div class="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-luxury-gold"></div>
+                <div class="contact-card relative">
+                    <div class="contact-card-bg absolute inset-0 bg-gradient-to-br from-luxury-gold/20 to-luxury-gold/5 rounded-2xl"></div>
+                    <div class="contact-card-border absolute inset-0 rounded-2xl"></div>
                     
-                    <div class="text-center">
-                        <div class="inline-flex items-center justify-center w-24 h-24 bg-luxury-gold rounded-full mb-8">
-                            <i class="fab fa-snapchat-ghost text-4xl text-luxury-black"></i>
+                    <div class="relative z-10 p-12 text-center">
+                        <div class="contact-icon-wrapper mb-8">
+                            <div class="contact-icon">
+                                <i class="fab fa-snapchat-ghost text-5xl"></i>
+                            </div>
                         </div>
                         
-                        <h3 class="text-3xl font-bebas text-luxury-gold mb-2">@TASTONMAILLOT93</h3>
-                        <p class="text-gray-400 mb-8">Réponse garantie en moins de 30 minutes</p>
+                        <h3 class="text-4xl font-bebas text-luxury-gold mb-2">@TASTONMAILLOT93</h3>
+                        <p class="text-gray-400 mb-10">Réponse instantanée • Service 7j/7</p>
                         
                         <a href="https://www.snapchat.com/add/tastonmaillot93" 
                            target="_blank"
-                           class="inline-flex items-center space-x-3 bg-luxury-gold text-luxury-black px-10 py-4 font-bold tracking-wider hover:bg-luxury-white transition-all duration-300">
-                            <i class="fab fa-snapchat-ghost"></i>
+                           class="cta-snapchat group">
+                            <i class="fab fa-snapchat-ghost mr-3"></i>
                             <span>AJOUTER SUR SNAPCHAT</span>
+                            <i class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform duration-300"></i>
                         </a>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-sm">
-                            <div>
-                                <i class="fas fa-clock text-luxury-gold text-2xl mb-3"></i>
-                                <p class="font-bold tracking-wider mb-1">RÉPONSE RAPIDE</p>
-                                <p class="text-gray-400">Service client premium</p>
+                        <div class="contact-features grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                            <div class="contact-feature">
+                                <i class="fas fa-bolt text-3xl text-luxury-gold mb-4"></i>
+                                <h4 class="font-bebas text-xl tracking-wider mb-2">RÉPONSE RAPIDE</h4>
+                                <p class="text-sm text-gray-400">Moins de 5 minutes</p>
                             </div>
-                            <div>
-                                <i class="fas fa-lock text-luxury-gold text-2xl mb-3"></i>
-                                <p class="font-bold tracking-wider mb-1">PAIEMENT SÉCURISÉ</p>
-                                <p class="text-gray-400">Transactions protégées</p>
+                            <div class="contact-feature">
+                                <i class="fas fa-shield-check text-3xl text-luxury-gold mb-4"></i>
+                                <h4 class="font-bebas text-xl tracking-wider mb-2">PAIEMENT SÉCURISÉ</h4>
+                                <p class="text-sm text-gray-400">100% protégé</p>
                             </div>
-                            <div>
-                                <i class="fas fa-globe text-luxury-gold text-2xl mb-3"></i>
-                                <p class="font-bold tracking-wider mb-1">LIVRAISON FRANCE</p>
-                                <p class="text-gray-400">Express 24-48h</p>
+                            <div class="contact-feature">
+                                <i class="fas fa-truck-fast text-3xl text-luxury-gold mb-4"></i>
+                                <h4 class="font-bebas text-xl tracking-wider mb-2">LIVRAISON EXPRESS</h4>
+                                <p class="text-sm text-gray-400">24h en France</p>
                             </div>
                         </div>
                     </div>
@@ -294,23 +495,59 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-luxury-black border-t border-luxury-gray py-12">
+    <footer class="footer-section relative py-16 border-t border-luxury-gold/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0 text-center md:text-left">
-                    <h3 class="text-2xl font-bebas text-luxury-gold mb-2">JERSEY ELITE</h3>
-                    <p class="text-sm text-gray-400">Collection Premium de Maillots de Football</p>
+            <div class="footer-content grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="footer-brand">
+                    <h3 class="text-3xl font-bebas text-luxury-gold mb-2">JERSEY ELITE™</h3>
+                    <p class="text-sm text-gray-400 mb-6">La référence du maillot de football premium</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-snapchat-ghost"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="flex space-x-8 text-sm">
-                    <a href="#" class="text-gray-400 hover:text-luxury-gold transition-colors">CONDITIONS</a>
-                    <a href="#" class="text-gray-400 hover:text-luxury-gold transition-colors">CONFIDENTIALITÉ</a>
-                    <a href="#contact" class="text-gray-400 hover:text-luxury-gold transition-colors">CONTACT</a>
+                <div class="footer-links">
+                    <h4 class="font-bebas text-xl tracking-wider mb-4">LIENS RAPIDES</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="footer-link">Collection</a></li>
+                        <li><a href="#" class="footer-link">Éditions Limitées</a></li>
+                        <li><a href="#" class="footer-link">Guide des Tailles</a></li>
+                        <li><a href="#" class="footer-link">Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-info">
+                    <h4 class="font-bebas text-xl tracking-wider mb-4">INFORMATIONS</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-truck text-luxury-gold"></i>
+                            <span>Livraison 24h en France</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-luxury-gold"></i>
+                            <span>Produits 100% authentiques</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-headset text-luxury-gold"></i>
+                            <span>Support client 7j/7</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="mt-8 pt-8 border-t border-luxury-gray text-center">
-                <p class="text-xs text-gray-500">© 2024 JERSEY ELITE. Tous droits réservés. | Designed with passion in France 🇫🇷</p>
+            <div class="footer-bottom mt-12 pt-8 border-t border-luxury-gray text-center">
+                <p class="text-xs text-gray-500">
+                    © 2024 JERSEY ELITE™. Tous droits réservés. | 
+                    <span class="text-luxury-gold">Crafted with passion in France</span> 🇫🇷
+                </p>
             </div>
         </div>
     </footer>
