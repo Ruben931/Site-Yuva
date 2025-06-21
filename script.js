@@ -1,4 +1,4 @@
-// T'AS TON MAILLOT™ - Exceptional JavaScript Experience
+// JERSEY ELITE™ - Exceptional JavaScript Experience
 
 // Premium Product Data with Enhanced Details
 const products = [
@@ -570,7 +570,7 @@ function quickView(productId) {
                     </div>
                     <p class="text-3xl font-bebas text-luxury-gold mb-6">€${product.price.toFixed(2)}</p>
                     <p class="text-gray-300 mb-8">
-                        Maillot officiel ${product.team} de la collection exclusive T'AS TON MAILLOT™. 
+                        Maillot officiel ${product.team} de la collection exclusive JERSEY ELITE™. 
                         Qualité premium garantie avec certificat d'authenticité.
                     </p>
                     <button class="cta-primary w-full" onclick="handleOrder('${product.name}'); closeQuickView();">
@@ -789,7 +789,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Premium Console Messages
-console.log('%cT\'AS TON MAILLOT™', 'font-size: 60px; font-weight: bold; background: linear-gradient(135deg, #D4AF37, #F7E7CE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
+console.log('%cJERSEY ELITE™', 'font-size: 60px; font-weight: bold; background: linear-gradient(135deg, #D4AF37, #F7E7CE); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);');
 console.log('%cHaute Couture Sportive', 'font-size: 20px; color: #D4AF37; font-style: italic;');
 console.log('%c🇫🇷 Crafted with passion in France', 'font-size: 16px; color: #999;');
 
